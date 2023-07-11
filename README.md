@@ -18,7 +18,14 @@ of the ListController. Each component will also register as an EventListener on 
 to update that parameter. The ListController then calls the API with the appropriate parameters. When the API responds, 
 the ListController will notify all the registered components that the data has changed.
 
+This base ListController class should be as generic as possible, the classes you actually use in your
+components will inherit from ListController and ideally only replace the paramsChanged(newParams) method. This 
+method is called when the user interacts with a component, and causes a filter parameter to change. The
+paramsChanged(newParams) method should call the API using the new parameters and return the promise.
+
 ### ListComponent
+
+
 
 ### PaginationComponent
 
